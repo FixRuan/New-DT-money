@@ -8,38 +8,38 @@ import { PriceHighlight, TransactionsContainer, TransactionsTable } from "./styl
 
 
 export function Home() {
-  const { transactions } = useTransaction();
+	const { transactions } = useTransaction();
 
-  return (
-    <div>
-      <Header />
-      <Summary />
+	return (
+		<div>
+			<Header />
+			<Summary />
 
-      <TransactionsContainer>
-        <SearchForm />
+			<TransactionsContainer>
+				<SearchForm />
 
-        <TransactionsTable>
-          <tbody>
-            {transactions.map(transaction => {
-              return (
-                <tr key={transaction.id}>
-                  <td width="50%">
-                    {transaction.description}
-                  </td>
-                  <td>
-                    <PriceHighlight variant={transaction.type}>
-                      {transaction.type === "outcome" && "- "}
-                      {priceFormater.format(transaction.price)}
-                    </PriceHighlight>
-                  </td>
-                  <td>{transaction.category}</td>
-                  <td>{dateFormater.format(new Date(transaction.createdAt))}</td>
-                </tr>
-              )
-            })}
-          </tbody>
-        </TransactionsTable>
-      </TransactionsContainer>
-    </div>
-  )
+				<TransactionsTable>
+					<tbody>
+						{transactions.map(transaction => {
+							return (
+								<tr key={transaction.id}>
+									<td width="50%">
+										{transaction.description}
+									</td>
+									<td>
+										<PriceHighlight variant={transaction.type}>
+											{transaction.type === "outcome" && "- "}
+											{priceFormater.format(transaction.price)}
+										</PriceHighlight>
+									</td>
+									<td>{transaction.category}</td>
+									<td>{dateFormater.format(new Date(transaction.createdAt))}</td>
+								</tr>
+							);
+						})}
+					</tbody>
+				</TransactionsTable>
+			</TransactionsContainer>
+		</div>
+	);
 }
