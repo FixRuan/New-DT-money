@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 import { MagnifyingGlass } from "phosphor-react";
 import { SearchFormContainer } from "./styles";
@@ -14,7 +14,7 @@ const searchFormSchema = z.object({
 
 type SearchFormInputs = z.infer<typeof searchFormSchema>
 
-export function SearchForm() {
+function SearchFormComponent() {
 	const { fetchTransactions } = useTransaction();
 
 
@@ -37,8 +37,10 @@ export function SearchForm() {
 
 			<button type="submit" disabled={isSubmitting}>
 				<MagnifyingGlass size={20} />
-        Buscar
+				Buscar
 			</button>
 		</SearchFormContainer>
 	);
 }
+
+export const SearchForm = memo(SearchFormComponent);
