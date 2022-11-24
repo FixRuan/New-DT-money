@@ -7,6 +7,10 @@
 
 - Clique [aqui](https://www.figma.com/file/N6wjaDqxDRz1g8CFvYO3tE/DT-Money-(Community)?node-id=0%3A1&t=DCEg1KFpYXu3Ne7Y-0) para acessar o layout no Figma
 
+## Funcionalidades da aplicação
+- Cadastro de transações de entrada
+- Cadastro de transações de saida
+
 ## Tecnologias utilizadas
 # Web
 - React
